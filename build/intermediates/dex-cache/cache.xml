@@ -1,0 +1,626 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="E:\android_project\HeSuanTest\app\libs\ujmp-core-0.3.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d905a56bcf623358ea93e6d64dda15b3e7fd99a6">
+        <dex dex="E:\android_project\HeSuanTest\app\build\intermediates\pre-dexed\debug\ujmp-core-0.3.0_37a1d7470de64fa0e055269d34f110000d7fecca.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\Android\SDK\extras\android\m2repository\com\android\support\support-annotations\23.4.0\support-annotations-23.4.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="ffbe55fdb2bb456b1485831706a9eac3300bb6b8">
+        <dex dex="E:\android_project\HeSuan\app\build\intermediates\pre-dexed\debug\support-annotations-23.4.0_fd57ea405e00eb8e20e973229c9b8ae7fcd3efee.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\android_project\HeSuan\app\build\intermediates\exploded-aar\com.bigkoo\convenientbanner\2.0.5\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="b99798f653c15a17af6779bb9f01a66f2ee6e6ef">
+        <dex dex="E:\android_project\HeSuan\app\build\intermediates\pre-dexed\debug\com.bigkoo-convenientbanner-2.0.5_552eba0016280e1a358b32d92c30382aac0e2e1c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\android_project\HeSuan\app\build\intermediates\exploded-aar\com.android.support\gridlayout-v7\23.4.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="7c4c1fcc34aca536e3389c31527fb3c941b80266">
+        <dex dex="E:\android_project\HeSuan\app\build\intermediates\pre-dexed\debug\com.android.support-gridlayout-v7-23.4.0_1644e5ebc30e8fab1a8735a3f7de0567df21e43f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\android_project\HeSuanTest\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.4.0\jars\libs\internal_impl-23.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="ea3c07504d2c8f4b13aa17c45c1b68ed9c1c3674">
+        <dex dex="E:\android_project\HeSuanTest\app\build\intermediates\pre-dexed\debug\internal_impl-23.4.0_8ff303bb17550aba689878fa70a85b88d1526977.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\retrofit\2.1.0\2de7cd8b95b7021b1d597f049bcb422055119f2c\retrofit-2.1.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="2de7cd8b95b7021b1d597f049bcb422055119f2c">
+        <dex dex="E:\android_project\HeSuan\app\build\intermediates\pre-dexed\debug\retrofit-2.1.0_02cdaa5f093e78b272a8b951b62057cb62740b8d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\android_project\HeSuan\app\libs\javalib.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="9a8efc741ada916ee395e68c2741375f699897fa">
+        <dex dex="E:\android_project\HeSuan\app\build\intermediates\pre-dexed\debug\javalib_40f8fa52e873ef9a7e276b205babd45f5eb5337d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.9.0\f824591a0016efbaeddb8300bee54832a1398cfa\okio-1.9.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="f824591a0016efbaeddb8300bee54832a1398cfa">
+        <dex dex="E:\android_project\HeSuan\app\build\intermediates\pre-dexed\debug\okio-1.9.0_db0545b090bbd931e1cf6e43202e038727277a7d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\android_project\HeSuanTest\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.4.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="8e673cdfadd8f2d98fdb2fda2285c30f6e449782">
+        <dex dex="E:\android_project\HeSuanTest\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-basement-8.4.0_c2f33de4655d7cb83963f0dd4bb7972c9128a12a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\android_project\HeSuan\app\libs\android-serialport.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="94883843ac423c679f1b662e984a1189c62d27dc">
+        <dex dex="E:\android_project\HeSuan\app\build\intermediates\pre-dexed\debug\android-serialport_7a80e2ed3079121fa13fab060f6fb531d03b24ae.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.github.PhilJay\MPAndroidChart\v3.0.1\369f9aa48a629b4e92557b37326f42dc3de796e4\MPAndroidChart-v3.0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="369f9aa48a629b4e92557b37326f42dc3de796e4">
+        <dex dex="E:\android_project\HeSuan\app\build\intermediates\pre-dexed\debug\MPAndroidChart-v3.0.1_f2f079cf6b14ebbcb4484088927be1a2d983d2e0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\android_project\HeSuan\app\build\intermediates\exploded-aar\com.zhy\base-adapter\3.0.3\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="a1ad7415919c989c1b72dc3b3d5d2f1429781c02">
+        <dex dex="E:\android_project\HeSuan\app\build\intermediates\pre-dexed\debug\com.zhy-base-adapter-3.0.3_dda4cb6d6ce02a2fbadbd93dd9ad565e6e72ccb2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\android_project\HeSuan\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\21.0.3\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
+        <dex dex="E:\android_project\HeSuan\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-21.0.3_448007a7419bc2e1af356c3d2f56af52fa667638.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\io.reactivex\rxjava\1.1.5\ece7b5d0870e66d8226dab6dcf47a2b12afff061\rxjava-1.1.5.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="ece7b5d0870e66d8226dab6dcf47a2b12afff061">
+        <dex dex="E:\android_project\HeSuan\app\build\intermediates\pre-dexed\debug\rxjava-1.1.5_74dd2eeb7003a467412f92d8accbdaab9a47a4fa.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\android_project\HeSuan\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appindexing\8.4.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="65d086ee9daaf87b5af62ad24471edafa433354c">
+        <dex dex="E:\android_project\HeSuan\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-appindexing-8.4.0_f059e4d36d74f10f843cd0cc296a0ef823c0a9f1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.github.PhilJay\MPAndroidChart\v3.0.1\369f9aa48a629b4e92557b37326f42dc3de796e4\MPAndroidChart-v3.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="369f9aa48a629b4e92557b37326f42dc3de796e4">
+        <dex dex="E:\android_project\HeSuan\app\build\intermediates\pre-dexed\debug\MPAndroidChart-v3.0.1_f2f079cf6b14ebbcb4484088927be1a2d983d2e0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\android_project\HeSuan\app\build\intermediates\exploded-aar\io.reactivex\rxandroid\1.1.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d4c4b83de2f6412072d2a29b1b7a5b03edaad5ff">
+        <dex dex="E:\android_project\HeSuan\app\build\intermediates\pre-dexed\debug\io.reactivex-rxandroid-1.1.0_08f312a11789b1e00bd42d75e59cd04dd42cab2d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\android_project\HeSuanTest\app\libs\android-serialport.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="94883843ac423c679f1b662e984a1189c62d27dc">
+        <dex dex="E:\android_project\HeSuanTest\app\build\intermediates\pre-dexed\debug\android-serialport_7e3135755fdf963605a2c72b1a3eee4c828a65aa.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\android_project\HeSuan\app\libs\android-serialport.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="94883843ac423c679f1b662e984a1189c62d27dc">
+        <dex dex="E:\android_project\HeSuan\app\build\intermediates\pre-dexed\debug\android-serialport_7a80e2ed3079121fa13fab060f6fb531d03b24ae.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\android_project\HeSuan\app\build\intermediates\exploded-aar\com.zhy\base-rvadapter\3.0.3\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="c84446b3e55d81d6e2cb63ccccfe0868d12f9baa">
+        <dex dex="E:\android_project\HeSuan\app\build\intermediates\pre-dexed\debug\com.zhy-base-rvadapter-3.0.3_cc3eff8e742aca1d9f572f335a873d1e44722334.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\adapter-rxjava\2.1.0\693eddc23e87ab13f9cf5001707ce8e7e1d1ff01\adapter-rxjava-2.1.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="693eddc23e87ab13f9cf5001707ce8e7e1d1ff01">
+        <dex dex="E:\android_project\HeSuan\app\build\intermediates\pre-dexed\debug\adapter-rxjava-2.1.0_a922f2c9139fd2cbbf2500b5aa528f1e500fa2f5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\android_project\HeSuanTest\app\build\intermediates\exploded-aar\com.bigkoo\convenientbanner\2.0.5\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="b99798f653c15a17af6779bb9f01a66f2ee6e6ef">
+        <dex dex="E:\android_project\HeSuanTest\app\build\intermediates\pre-dexed\debug\com.bigkoo-convenientbanner-2.0.5_0bdee18b2ca0b6d8877e2a846062049beb1b6ebf.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\android_project\HeSuan\app\libs\universal-image-loader-1.9.5.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="442dbfb517b9ab5cb5c6da7ebf8cc28ec5bd0375">
+        <dex dex="E:\android_project\HeSuan\app\build\intermediates\pre-dexed\debug\universal-image-loader-1.9.5_739d54b8f05f548bac7611656dba429de716fddb.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\android_project\HeSuanTest\app\build\intermediates\exploded-aar\com.android.support\gridlayout-v7\23.4.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="7c4c1fcc34aca536e3389c31527fb3c941b80266">
+        <dex dex="E:\android_project\HeSuanTest\app\build\intermediates\pre-dexed\debug\com.android.support-gridlayout-v7-23.4.0_3ab1c5d98be11b1b1998807e7a4533ce3072e0d3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\android_project\HeSuan\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.4.0\jars\libs\internal_impl-23.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="ea3c07504d2c8f4b13aa17c45c1b68ed9c1c3674">
+        <dex dex="E:\android_project\HeSuan\app\build\intermediates\pre-dexed\debug\internal_impl-23.4.0_ce35768a9f618a1e9e24b0862a27f2306566e329.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\android_project\HeSuan\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.4.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="ec75036c3c52e451d0cde50a5aedaf5fd32354a0">
+        <dex dex="E:\android_project\HeSuan\app\build\intermediates\pre-dexed\debug\com.android.support-recyclerview-v7-23.4.0_a2bb8e620a9455c72a90cef5da7b57b26b1835a4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\android_project\HeSuanTest\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appindexing\8.4.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="65d086ee9daaf87b5af62ad24471edafa433354c">
+        <dex dex="E:\android_project\HeSuanTest\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-appindexing-8.4.0_68db1dce0673813df1569b327fd323b13931851a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\converter-gson\2.1.0\aa557d71ead91cbf26e0c316a0f593d168303309\converter-gson-2.1.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="aa557d71ead91cbf26e0c316a0f593d168303309">
+        <dex dex="E:\android_project\HeSuan\app\build\intermediates\pre-dexed\debug\converter-gson-2.1.0_fc6d109c83c05cddded4b5ea732ed5dd7c938086.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.7\751f548c85fa49f330cecbb1875893f971b33c4e\gson-2.7.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="751f548c85fa49f330cecbb1875893f971b33c4e">
+        <dex dex="E:\android_project\HeSuan\app\build\intermediates\pre-dexed\debug\gson-2.7_2e85dbf641c4a16c73925139bd4ff50ebb0450dd.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\android_project\HeSuanTest\app\build\intermediates\exploded-aar\com.zhy\base-adapter\3.0.3\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="a1ad7415919c989c1b72dc3b3d5d2f1429781c02">
+        <dex dex="E:\android_project\HeSuanTest\app\build\intermediates\pre-dexed\debug\com.zhy-base-adapter-3.0.3_eceaa7723df996f69a3b846f85d0ab8ce2e98630.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\logging-interceptor\3.4.1\381fc1096ba65040d8e80ea43b2e1d9bad02345e\logging-interceptor-3.4.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="381fc1096ba65040d8e80ea43b2e1d9bad02345e">
+        <dex dex="E:\android_project\HeSuan\app\build\intermediates\pre-dexed\debug\logging-interceptor-3.4.1_16ea2c5adabd180da0b0709521ed490e4e49b95b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.jakewharton\butterknife\7.0.1\d5d13ea991eab0252e3710e5df3d6a9d4b21d461\butterknife-7.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d5d13ea991eab0252e3710e5df3d6a9d4b21d461">
+        <dex dex="E:\android_project\HeSuan\app\build\intermediates\pre-dexed\debug\butterknife-7.0.1_fc861cbde294a7e4a9efd57936d766cb077b60e2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\android_project\HeSuan\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.4.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="67bd36ee9340ec7c254108936ad16b24bed160cc">
+        <dex dex="E:\android_project\HeSuan\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-23.4.0_d9f9c39c8deb4f544cfed6bbfc2c61dd9161588d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\android_project\HeSuanTest\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\8.4.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="fef2b3e4b6b1b0e5fe7b69fa137a5fa55a3182ab">
+        <dex dex="E:\android_project\HeSuanTest\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-base-8.4.0_bc180100b353c6e9c7921dd80b8c8c42548294fa.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\retrofit\2.1.0\2de7cd8b95b7021b1d597f049bcb422055119f2c\retrofit-2.1.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="2de7cd8b95b7021b1d597f049bcb422055119f2c">
+        <dex dex="E:\android_project\HeSuan\app\build\intermediates\pre-dexed\debug\retrofit-2.1.0_02cdaa5f093e78b272a8b951b62057cb62740b8d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\android_project\HeSuan\app\build\intermediates\exploded-aar\com.android.support\gridlayout-v7\23.4.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="7c4c1fcc34aca536e3389c31527fb3c941b80266">
+        <dex dex="E:\android_project\HeSuan\app\build\intermediates\pre-dexed\debug\com.android.support-gridlayout-v7-23.4.0_1644e5ebc30e8fab1a8735a3f7de0567df21e43f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\android_project\HeSuan\app\libs\javalib.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="9a8efc741ada916ee395e68c2741375f699897fa">
+        <dex dex="E:\android_project\HeSuan\app\build\intermediates\pre-dexed\debug\javalib_40f8fa52e873ef9a7e276b205babd45f5eb5337d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\Android\SDK\extras\android\m2repository\com\android\support\support-annotations\23.4.0\support-annotations-23.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="ffbe55fdb2bb456b1485831706a9eac3300bb6b8">
+        <dex dex="E:\android_project\HeSuan\app\build\intermediates\pre-dexed\debug\support-annotations-23.4.0_fd57ea405e00eb8e20e973229c9b8ae7fcd3efee.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\android_project\HeSuanTest\app\libs\javalib.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="9a8efc741ada916ee395e68c2741375f699897fa">
+        <dex dex="E:\android_project\HeSuanTest\app\build\intermediates\pre-dexed\debug\javalib_11c049681639fd7aaabd7e51a4e26719ff69c1e6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\android_project\HeSuan\app\build\intermediates\exploded-aar\com.bigkoo\convenientbanner\2.0.5\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="b99798f653c15a17af6779bb9f01a66f2ee6e6ef">
+        <dex dex="E:\android_project\HeSuan\app\build\intermediates\pre-dexed\debug\com.bigkoo-convenientbanner-2.0.5_552eba0016280e1a358b32d92c30382aac0e2e1c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.9.0\f824591a0016efbaeddb8300bee54832a1398cfa\okio-1.9.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="f824591a0016efbaeddb8300bee54832a1398cfa">
+        <dex dex="E:\android_project\HeSuan\app\build\intermediates\pre-dexed\debug\okio-1.9.0_db0545b090bbd931e1cf6e43202e038727277a7d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\android_project\HeSuanTest\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.4.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="ec75036c3c52e451d0cde50a5aedaf5fd32354a0">
+        <dex dex="E:\android_project\HeSuanTest\app\build\intermediates\pre-dexed\debug\com.android.support-recyclerview-v7-23.4.0_152cd82b51a0e457c01ab1d6fb7576a8225ab3af.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\android_project\HeSuan\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\8.4.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="fef2b3e4b6b1b0e5fe7b69fa137a5fa55a3182ab">
+        <dex dex="E:\android_project\HeSuan\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-base-8.4.0_2be0a6bbcd154aa3e1a3d94dc19cb2e3fd82c004.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\android_project\HeSuan\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.4.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="8e673cdfadd8f2d98fdb2fda2285c30f6e449782">
+        <dex dex="E:\android_project\HeSuan\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-basement-8.4.0_bebfa39dcf7a49ab741886859d5d5010ffbf81c4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\io.reactivex\rxjava\1.1.5\ece7b5d0870e66d8226dab6dcf47a2b12afff061\rxjava-1.1.5.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="ece7b5d0870e66d8226dab6dcf47a2b12afff061">
+        <dex dex="E:\android_project\HeSuan\app\build\intermediates\pre-dexed\debug\rxjava-1.1.5_74dd2eeb7003a467412f92d8accbdaab9a47a4fa.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\android_project\HeSuan\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\21.0.3\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
+        <dex dex="E:\android_project\HeSuan\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-21.0.3_448007a7419bc2e1af356c3d2f56af52fa667638.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp\3.4.1\c7c4f9e35c2fd5900da24f9872e3971801f08ce0\okhttp-3.4.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="c7c4f9e35c2fd5900da24f9872e3971801f08ce0">
+        <dex dex="E:\android_project\HeSuan\app\build\intermediates\pre-dexed\debug\okhttp-3.4.1_a3a718343956c6e4d917a53a4fdd4a4dc134cda5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\android_project\HeSuan\app\build\intermediates\exploded-aar\io.reactivex\rxandroid\1.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d4c4b83de2f6412072d2a29b1b7a5b03edaad5ff">
+        <dex dex="E:\android_project\HeSuan\app\build\intermediates\pre-dexed\debug\io.reactivex-rxandroid-1.1.0_08f312a11789b1e00bd42d75e59cd04dd42cab2d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\android_project\HeSuan\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.4.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="8e673cdfadd8f2d98fdb2fda2285c30f6e449782">
+        <dex dex="E:\android_project\HeSuan\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-basement-8.4.0_bebfa39dcf7a49ab741886859d5d5010ffbf81c4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\android_project\HeSuan\app\build\intermediates\exploded-aar\com.zhy\base-adapter\3.0.3\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="a1ad7415919c989c1b72dc3b3d5d2f1429781c02">
+        <dex dex="E:\android_project\HeSuan\app\build\intermediates\pre-dexed\debug\com.zhy-base-adapter-3.0.3_dda4cb6d6ce02a2fbadbd93dd9ad565e6e72ccb2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\android_project\HeSuan\app\libs\ujmp-core-0.3.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d905a56bcf623358ea93e6d64dda15b3e7fd99a6">
+        <dex dex="E:\android_project\HeSuan\app\build\intermediates\pre-dexed\debug\ujmp-core-0.3.0_eb4238a316835da2405f16517d02d5c63f722fb1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\android_project\HeSuanTest\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\21.0.3\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
+        <dex dex="E:\android_project\HeSuanTest\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-21.0.3_82af9240e66cce2927e75b180e2c2948e82f755f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\android_project\HeSuan\app\libs\universal-image-loader-1.9.5.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="442dbfb517b9ab5cb5c6da7ebf8cc28ec5bd0375">
+        <dex dex="E:\android_project\HeSuan\app\build\intermediates\pre-dexed\debug\universal-image-loader-1.9.5_739d54b8f05f548bac7611656dba429de716fddb.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\android_project\HeSuanTest\app\build\intermediates\exploded-aar\com.zhy\base-rvadapter\3.0.3\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="c84446b3e55d81d6e2cb63ccccfe0868d12f9baa">
+        <dex dex="E:\android_project\HeSuanTest\app\build\intermediates\pre-dexed\debug\com.zhy-base-rvadapter-3.0.3_3f64822c55df271a54e502e5edc851c387e4415f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\android_project\HeSuan\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.4.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="67bd36ee9340ec7c254108936ad16b24bed160cc">
+        <dex dex="E:\android_project\HeSuan\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-23.4.0_d9f9c39c8deb4f544cfed6bbfc2c61dd9161588d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\android_project\HeSuanTest\app\libs\universal-image-loader-1.9.5.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="442dbfb517b9ab5cb5c6da7ebf8cc28ec5bd0375">
+        <dex dex="E:\android_project\HeSuanTest\app\build\intermediates\pre-dexed\debug\universal-image-loader-1.9.5_b168315c6369ec02711e33167808ef0c75f170af.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp\3.4.1\c7c4f9e35c2fd5900da24f9872e3971801f08ce0\okhttp-3.4.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="c7c4f9e35c2fd5900da24f9872e3971801f08ce0">
+        <dex dex="E:\android_project\HeSuan\app\build\intermediates\pre-dexed\debug\okhttp-3.4.1_a3a718343956c6e4d917a53a4fdd4a4dc134cda5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\android_project\HeSuan\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.4.0\jars\libs\internal_impl-23.4.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="ea3c07504d2c8f4b13aa17c45c1b68ed9c1c3674">
+        <dex dex="E:\android_project\HeSuan\app\build\intermediates\pre-dexed\debug\internal_impl-23.4.0_ce35768a9f618a1e9e24b0862a27f2306566e329.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\android_project\HeSuan\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\8.4.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="fef2b3e4b6b1b0e5fe7b69fa137a5fa55a3182ab">
+        <dex dex="E:\android_project\HeSuan\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-base-8.4.0_2be0a6bbcd154aa3e1a3d94dc19cb2e3fd82c004.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\android_project\HeSuan\app\build\intermediates\exploded-aar\com.zhy\base-rvadapter\3.0.3\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="c84446b3e55d81d6e2cb63ccccfe0868d12f9baa">
+        <dex dex="E:\android_project\HeSuan\app\build\intermediates\pre-dexed\debug\com.zhy-base-rvadapter-3.0.3_cc3eff8e742aca1d9f572f335a873d1e44722334.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.7\751f548c85fa49f330cecbb1875893f971b33c4e\gson-2.7.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="751f548c85fa49f330cecbb1875893f971b33c4e">
+        <dex dex="E:\android_project\HeSuan\app\build\intermediates\pre-dexed\debug\gson-2.7_2e85dbf641c4a16c73925139bd4ff50ebb0450dd.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\converter-gson\2.1.0\aa557d71ead91cbf26e0c316a0f593d168303309\converter-gson-2.1.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="aa557d71ead91cbf26e0c316a0f593d168303309">
+        <dex dex="E:\android_project\HeSuan\app\build\intermediates\pre-dexed\debug\converter-gson-2.1.0_fc6d109c83c05cddded4b5ea732ed5dd7c938086.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\android_project\HeSuan\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appindexing\8.4.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="65d086ee9daaf87b5af62ad24471edafa433354c">
+        <dex dex="E:\android_project\HeSuan\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-appindexing-8.4.0_f059e4d36d74f10f843cd0cc296a0ef823c0a9f1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\adapter-rxjava\2.1.0\693eddc23e87ab13f9cf5001707ce8e7e1d1ff01\adapter-rxjava-2.1.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="693eddc23e87ab13f9cf5001707ce8e7e1d1ff01">
+        <dex dex="E:\android_project\HeSuan\app\build\intermediates\pre-dexed\debug\adapter-rxjava-2.1.0_a922f2c9139fd2cbbf2500b5aa528f1e500fa2f5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\android_project\HeSuanTest\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.4.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="67bd36ee9340ec7c254108936ad16b24bed160cc">
+        <dex dex="E:\android_project\HeSuanTest\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-23.4.0_f63cb1aec55d2d8dbb237e83263ce668f0ceea00.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\logging-interceptor\3.4.1\381fc1096ba65040d8e80ea43b2e1d9bad02345e\logging-interceptor-3.4.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="381fc1096ba65040d8e80ea43b2e1d9bad02345e">
+        <dex dex="E:\android_project\HeSuan\app\build\intermediates\pre-dexed\debug\logging-interceptor-3.4.1_16ea2c5adabd180da0b0709521ed490e4e49b95b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.jakewharton\butterknife\7.0.1\d5d13ea991eab0252e3710e5df3d6a9d4b21d461\butterknife-7.0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d5d13ea991eab0252e3710e5df3d6a9d4b21d461">
+        <dex dex="E:\android_project\HeSuan\app\build\intermediates\pre-dexed\debug\butterknife-7.0.1_fc861cbde294a7e4a9efd57936d766cb077b60e2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\android_project\HeSuanTest\app\build\intermediates\exploded-aar\io.reactivex\rxandroid\1.1.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d4c4b83de2f6412072d2a29b1b7a5b03edaad5ff">
+        <dex dex="E:\android_project\HeSuanTest\app\build\intermediates\pre-dexed\debug\io.reactivex-rxandroid-1.1.0_8dff5b855deed61054a33f4987c4284ce564c015.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\android_project\HeSuan\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.4.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="ec75036c3c52e451d0cde50a5aedaf5fd32354a0">
+        <dex dex="E:\android_project\HeSuan\app\build\intermediates\pre-dexed\debug\com.android.support-recyclerview-v7-23.4.0_a2bb8e620a9455c72a90cef5da7b57b26b1835a4.jar" />
+    </item>
+
+</items>

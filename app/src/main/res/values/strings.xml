@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">核酸检测</string>
+    <string name="device_err">设备故障...</string>
+    <string name="conn_err">服务器无响应...</string>
+    <string name="curr_temperature">当前温度\n</string>
+    <string name="normal_device_status">设备状态\n正常</string>
+    <string name="relation_fitting">关系拟合</string>
+    <string name="sample">样本</string>
+    <string name="concentration">浓度</string>
+    <string name="result">结果</string>
+    <string name="standard">标准</string>
+    <string name="exception">异常</string>
+    <string name="limitLinelabel">荧光阈值</string>
+    <string name="upmove">阈值上移</string>
+    <string name="downMove">阈值下移</string>
+    <string name="negative">阴性</string>
+    <string name="positive">阳性</string>
+</resources>

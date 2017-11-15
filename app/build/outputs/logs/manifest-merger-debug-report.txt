@@ -1,0 +1,149 @@
+-- Merging decision tree log ---
+manifest
+ADDED from E:\android_project\HeSuanTest\app\src\main\AndroidManifest.xml:2:1-57:12
+	package
+		ADDED from E:\android_project\HeSuanTest\app\src\main\AndroidManifest.xml:3:5-28
+		INJECTED from E:\android_project\HeSuanTest\app\src\main\AndroidManifest.xml
+		INJECTED from E:\android_project\HeSuanTest\app\src\main\AndroidManifest.xml
+	android:versionName
+		ADDED from E:\android_project\HeSuanTest\app\src\main\AndroidManifest.xml:5:5-31
+		INJECTED from E:\android_project\HeSuanTest\app\src\main\AndroidManifest.xml
+		INJECTED from E:\android_project\HeSuanTest\app\src\main\AndroidManifest.xml
+	android:versionCode
+		ADDED from E:\android_project\HeSuanTest\app\src\main\AndroidManifest.xml:4:5-28
+		INJECTED from E:\android_project\HeSuanTest\app\src\main\AndroidManifest.xml
+		INJECTED from E:\android_project\HeSuanTest\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from E:\android_project\HeSuanTest\app\src\main\AndroidManifest.xml:2:11-69
+uses-sdk
+ADDED from E:\android_project\HeSuanTest\app\src\main\AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:gridlayout-v7:23.4.0] E:\android_project\HeSuanTest\app\build\intermediates\exploded-aar\com.android.support\gridlayout-v7\23.4.0\AndroidManifest.xml:20:5-43
+MERGED from [io.reactivex:rxandroid:1.1.0] E:\android_project\HeSuanTest\app\build\intermediates\exploded-aar\io.reactivex\rxandroid\1.1.0\AndroidManifest.xml:19:5-43
+MERGED from [com.bigkoo:convenientbanner:2.0.5] E:\android_project\HeSuanTest\app\build\intermediates\exploded-aar\com.bigkoo\convenientbanner\2.0.5\AndroidManifest.xml:7:5-44
+MERGED from [com.android.support:appcompat-v7:21.0.3] E:\android_project\HeSuanTest\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\21.0.3\AndroidManifest.xml:15:5-42
+MERGED from [com.zhy:base-adapter:3.0.3] E:\android_project\HeSuanTest\app\build\intermediates\exploded-aar\com.zhy\base-adapter\3.0.3\AndroidManifest.xml:7:5-9:41
+MERGED from [com.zhy:base-rvadapter:3.0.3] E:\android_project\HeSuanTest\app\build\intermediates\exploded-aar\com.zhy\base-rvadapter\3.0.3\AndroidManifest.xml:8:5-10:41
+MERGED from [com.android.support:recyclerview-v7:23.4.0] E:\android_project\HeSuanTest\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.4.0\AndroidManifest.xml:20:5-43
+MERGED from [com.google.android.gms:play-services-appindexing:8.4.0] E:\android_project\HeSuanTest\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appindexing\8.4.0\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-base:8.4.0] E:\android_project\HeSuanTest\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\8.4.0\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-basement:8.4.0] E:\android_project\HeSuanTest\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.4.0\AndroidManifest.xml:18:5-42
+MERGED from [com.android.support:support-v4:23.4.0] E:\android_project\HeSuanTest\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.4.0\AndroidManifest.xml:20:5-43
+	android:targetSdkVersion
+		ADDED from E:\android_project\HeSuanTest\app\src\main\AndroidManifest.xml:9:9-38
+		INJECTED from E:\android_project\HeSuanTest\app\src\main\AndroidManifest.xml
+		INJECTED from E:\android_project\HeSuanTest\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		ADDED from E:\android_project\HeSuanTest\app\src\main\AndroidManifest.xml:8:9-34
+		INJECTED from E:\android_project\HeSuanTest\app\src\main\AndroidManifest.xml
+		INJECTED from E:\android_project\HeSuanTest\app\src\main\AndroidManifest.xml
+uses-permission#android.permission.SERIAL_PORT
+ADDED from E:\android_project\HeSuanTest\app\src\main\AndroidManifest.xml:11:5-69
+	android:name
+		ADDED from E:\android_project\HeSuanTest\app\src\main\AndroidManifest.xml:11:22-67
+uses-permission#android.permission.READ_PHONE_STATE
+ADDED from E:\android_project\HeSuanTest\app\src\main\AndroidManifest.xml:12:5-75
+	android:name
+		ADDED from E:\android_project\HeSuanTest\app\src\main\AndroidManifest.xml:12:22-72
+uses-permission#android.permission.MOUNT_UNMOUNT_FILESYSTEMS
+ADDED from E:\android_project\HeSuanTest\app\src\main\AndroidManifest.xml:13:5-100
+	android:name
+		ADDED from E:\android_project\HeSuanTest\app\src\main\AndroidManifest.xml:13:22-81
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from E:\android_project\HeSuanTest\app\src\main\AndroidManifest.xml:14:5-97
+	android:name
+		ADDED from E:\android_project\HeSuanTest\app\src\main\AndroidManifest.xml:14:22-78
+uses-permission#android.permission.RECEIVE_BOOT_COMPLETED
+ADDED from E:\android_project\HeSuanTest\app\src\main\AndroidManifest.xml:15:5-97
+	android:name
+		ADDED from E:\android_project\HeSuanTest\app\src\main\AndroidManifest.xml:15:22-78
+uses-permission#android.permission.INTERNET
+ADDED from E:\android_project\HeSuanTest\app\src\main\AndroidManifest.xml:16:5-83
+	android:name
+		ADDED from E:\android_project\HeSuanTest\app\src\main\AndroidManifest.xml:16:22-64
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from E:\android_project\HeSuanTest\app\src\main\AndroidManifest.xml:17:5-95
+	android:name
+		ADDED from E:\android_project\HeSuanTest\app\src\main\AndroidManifest.xml:17:22-76
+uses-permission#android.permission.ACCESS_WIFI_STATE
+ADDED from E:\android_project\HeSuanTest\app\src\main\AndroidManifest.xml:18:5-75
+	android:name
+		ADDED from E:\android_project\HeSuanTest\app\src\main\AndroidManifest.xml:18:22-73
+uses-permission#android.permission.CHANGE_NETWORK_STATE
+ADDED from E:\android_project\HeSuanTest\app\src\main\AndroidManifest.xml:19:5-78
+	android:name
+		ADDED from E:\android_project\HeSuanTest\app\src\main\AndroidManifest.xml:19:22-76
+uses-permission#android.permission.CHANGE_WIFI_STATE
+ADDED from E:\android_project\HeSuanTest\app\src\main\AndroidManifest.xml:20:5-75
+	android:name
+		ADDED from E:\android_project\HeSuanTest\app\src\main\AndroidManifest.xml:20:22-73
+uses-permission#android.permission.RESTART_PACKAGES
+ADDED from E:\android_project\HeSuanTest\app\src\main\AndroidManifest.xml:21:5-92
+	android:name
+		ADDED from E:\android_project\HeSuanTest\app\src\main\AndroidManifest.xml:21:22-72
+uses-permission#android.permission.VIBRATE
+ADDED from E:\android_project\HeSuanTest\app\src\main\AndroidManifest.xml:22:5-83
+	android:name
+		ADDED from E:\android_project\HeSuanTest\app\src\main\AndroidManifest.xml:22:22-63
+uses-permission#android.permission.GET_TASKS
+ADDED from E:\android_project\HeSuanTest\app\src\main\AndroidManifest.xml:23:5-84
+	android:name
+		ADDED from E:\android_project\HeSuanTest\app\src\main\AndroidManifest.xml:23:22-65
+uses-permission#android.permission.DISABLE_KEYGUARD
+ADDED from E:\android_project\HeSuanTest\app\src\main\AndroidManifest.xml:24:5-91
+	android:name
+		ADDED from E:\android_project\HeSuanTest\app\src\main\AndroidManifest.xml:24:22-72
+uses-permission#android.permission.EXPAND_STATUS_BAR
+ADDED from E:\android_project\HeSuanTest\app\src\main\AndroidManifest.xml:25:5-75
+	android:name
+		ADDED from E:\android_project\HeSuanTest\app\src\main\AndroidManifest.xml:25:22-73
+application
+ADDED from E:\android_project\HeSuanTest\app\src\main\AndroidManifest.xml:28:5-55:19
+MERGED from [com.android.support:gridlayout-v7:23.4.0] E:\android_project\HeSuanTest\app\build\intermediates\exploded-aar\com.android.support\gridlayout-v7\23.4.0\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:appcompat-v7:21.0.3] E:\android_project\HeSuanTest\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\21.0.3\AndroidManifest.xml:16:5-19
+MERGED from [com.google.android.gms:play-services-appindexing:8.4.0] E:\android_project\HeSuanTest\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appindexing\8.4.0\AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-basement:8.4.0] E:\android_project\HeSuanTest\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.4.0\AndroidManifest.xml:20:5-24:19
+MERGED from [com.android.support:support-v4:23.4.0] E:\android_project\HeSuanTest\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.4.0\AndroidManifest.xml:22:5-20
+	android:label
+		ADDED from E:\android_project\HeSuanTest\app\src\main\AndroidManifest.xml:32:9-41
+	android:allowBackup
+		ADDED from E:\android_project\HeSuanTest\app\src\main\AndroidManifest.xml:30:9-35
+	android:icon
+		ADDED from E:\android_project\HeSuanTest\app\src\main\AndroidManifest.xml:31:9-45
+	android:theme
+		ADDED from E:\android_project\HeSuanTest\app\src\main\AndroidManifest.xml:33:9-40
+	android:name
+		ADDED from E:\android_project\HeSuanTest\app\src\main\AndroidManifest.xml:29:9-53
+activity#com.sxonecard.ui.WelcomeActivity
+ADDED from E:\android_project\HeSuanTest\app\src\main\AndroidManifest.xml:34:9-41:20
+	android:label
+		ADDED from E:\android_project\HeSuanTest\app\src\main\AndroidManifest.xml:36:13-45
+	android:name
+		ADDED from E:\android_project\HeSuanTest\app\src\main\AndroidManifest.xml:35:13-60
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from E:\android_project\HeSuanTest\app\src\main\AndroidManifest.xml:37:13-40:29
+action#android.intent.action.MAIN
+ADDED from E:\android_project\HeSuanTest\app\src\main\AndroidManifest.xml:38:17-69
+	android:name
+		ADDED from E:\android_project\HeSuanTest\app\src\main\AndroidManifest.xml:38:25-66
+category#android.intent.category.LAUNCHER
+ADDED from E:\android_project\HeSuanTest\app\src\main\AndroidManifest.xml:39:17-77
+	android:name
+		ADDED from E:\android_project\HeSuanTest\app\src\main\AndroidManifest.xml:39:27-74
+activity#com.sxonecard.ui.HeSuanActivity
+ADDED from E:\android_project\HeSuanTest\app\src\main\AndroidManifest.xml:43:8-76
+	android:name
+		ADDED from E:\android_project\HeSuanTest\app\src\main\AndroidManifest.xml:43:18-64
+activity#com.sxonecard.ui.PreparedActivity
+ADDED from E:\android_project\HeSuanTest\app\src\main\AndroidManifest.xml:44:9-79
+	android:name
+		ADDED from E:\android_project\HeSuanTest\app\src\main\AndroidManifest.xml:44:19-67
+activity#com.sxonecard.ui.RelationFitActivity
+ADDED from E:\android_project\HeSuanTest\app\src\main\AndroidManifest.xml:45:9-82
+	android:name
+		ADDED from E:\android_project\HeSuanTest\app\src\main\AndroidManifest.xml:45:19-70
+meta-data#com.google.android.gms.version
+ADDED from [com.google.android.gms:play-services-basement:8.4.0] E:\android_project\HeSuanTest\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.4.0\AndroidManifest.xml:21:9-23:69
+	android:value
+		ADDED from [com.google.android.gms:play-services-basement:8.4.0] E:\android_project\HeSuanTest\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.4.0\AndroidManifest.xml:23:13-66
+	android:name
+		ADDED from [com.google.android.gms:play-services-basement:8.4.0] E:\android_project\HeSuanTest\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.4.0\AndroidManifest.xml:22:13-58
