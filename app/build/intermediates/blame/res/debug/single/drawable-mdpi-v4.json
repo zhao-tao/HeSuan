@@ -4,8 +4,16 @@
         "source": "E:\\android_project\\HeSuanTest\\app\\src\\main\\res\\drawable-mdpi\\launch.jpg"
     },
     {
+        "merged": "D:\\GitHub\\HeSuan\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\launch.jpg",
+        "source": "D:\\GitHub\\HeSuan\\app\\src\\main\\res\\drawable-mdpi\\launch.jpg"
+    },
+    {
         "merged": "E:\\android_project\\HeSuanTest\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\setbar_bg.xml",
         "source": "E:\\android_project\\HeSuanTest\\app\\src\\main\\res\\drawable-mdpi\\setbar_bg.xml"
+    },
+    {
+        "merged": "D:\\GitHub\\HeSuan\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\setbar_bg.xml",
+        "source": "D:\\GitHub\\HeSuan\\app\\src\\main\\res\\drawable-mdpi\\setbar_bg.xml"
     },
     {
         "merged": "E:\\android_project\\HeSuan\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\setbar_bg.xml",

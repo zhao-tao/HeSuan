@@ -1873,6 +1873,12 @@ containing a value of this type.
         public static final int upmove=0x7f06003e;
     }
     public static final class style {
+        /** 
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        
+         */
         public static final int AppBaseTheme=0x7f0a0065;
         public static final int AppTheme=0x7f0a0066;
         public static final int Base_TextAppearance_AppCompat=0x7f0a0027;
