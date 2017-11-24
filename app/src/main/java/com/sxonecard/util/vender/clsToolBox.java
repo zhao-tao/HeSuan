@@ -197,7 +197,6 @@ public class clsToolBox {
         try {
             return Integer.parseInt(str_sid);
         } catch (Exception e) {
-            // TODO: handle exception
             return 0;
         }
 

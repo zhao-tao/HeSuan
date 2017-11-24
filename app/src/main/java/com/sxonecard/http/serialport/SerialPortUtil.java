@@ -292,19 +292,21 @@ public class SerialPortUtil {
      */
     private void receiveCheckCardData(byte[] destBuff) {
         if (0x00 == destBuff[10]) {
+            // TODO: 2017/11/24 获取到正常的串口数据处理
             //获取温度值并刷新页面
-            CardApplication.heSuanTemperature = Integer.valueOf(destBuff[11]);
+            Log.i(TAG, "温度：" + Integer.valueOf(destBuff[11]));
+            CardApplication.heSuanTemperature = Integer.parseInt(destBuff[11] + "", 16);
             RxBus.get().post("temperature", CardApplication.heSuanTemperature + "");
 
             List<List<Integer>> yAxisValues = CardApplication.yAxisValues;
             Gson gson = new Gson();
 //            从12位开始，每四组数据为一个荧光管的光强值，共16组荧光管光强值。
-//            每次重新获取，会给16组数据中各添加新的光强值。
+//            每次重新获取，会给16组数据中各添加新的光强值
             for (int i = 0; i < 16; i++) {
-                int a = Integer.valueOf(destBuff[12 + i * 4]);
-                int b = Integer.valueOf(destBuff[13 + i * 4]);
-                int c = Integer.valueOf(destBuff[14 + i * 4]);
-                int d = Integer.valueOf(destBuff[15 + i * 4]);
+                int a = Integer.parseInt(destBuff[12 + i * 4] + "", 16);
+                int b = Integer.parseInt(destBuff[13 + i * 4] + "", 16);
+                int c = Integer.parseInt(destBuff[14 + i * 4] + "", 16);
+                int d = Integer.parseInt(destBuff[15 + i * 4] + "", 16);
                 Integer e = a + b + c + d;
 
                 if (yAxisValues.size() < i + 1) {

@@ -295,6 +295,7 @@ public class LineFragment extends BaseFragment {
         for (int i = 0; i <= 60; i++) {
             xAxisValues.add(i);
         }
+//        虚拟数据
 //        List<List<Integer>> yAxisValues = new ArrayList<List<Integer>>();
 //        for (int i = 0; i < 16; i++) {
 //            List<Integer> line = new ArrayList<Integer>();
