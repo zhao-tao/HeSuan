@@ -145,8 +145,8 @@ public class LineFragment extends BaseFragment {
         startSendRequest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(LineFragment.super.context, "开始向串口发送检测请求...", Toast.LENGTH_LONG).show();
-                SerialPortUtil.getInstance().sendStartTestCmd();
+//                Toast.makeText(LineFragment.super.context, "开始向串口发送检测请求...", Toast.LENGTH_LONG).show();
+//                SerialPortUtil.getInstance().sendStartTestCmd();
             }
         });
 

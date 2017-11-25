@@ -5,6 +5,7 @@ package com.sxonecard.http.serialport;
  */
 
 import android.util.Log;
+import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.sxonecard.CardApplication;
@@ -253,6 +254,7 @@ public class SerialPortUtil {
                 }
             }, 3 * 1000);*/
             Log.d(TAG, "模块检测成功");
+            sendStartTestCmd();
         } else {
             if (0xBB == Integer.valueOf(destBuff[11])) {
                 moduleDesc = "功能禁止";
@@ -274,6 +276,7 @@ public class SerialPortUtil {
      */
     public byte[] sendStartTestCmd() {
         // TODO: 2017/11/25 第三步：开始发送数据
+        Log.d(TAG, "第三步：开始请求数据");
         byte[] buff = new byte[12];
         int index = 0;
 
