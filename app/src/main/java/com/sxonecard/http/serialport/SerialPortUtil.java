@@ -4,7 +4,6 @@ package com.sxonecard.http.serialport;
  * Created by Administrator on 2017-5-23.
  */
 
-import android.os.Handler;
 import android.util.Log;
 
 import com.google.gson.Gson;
@@ -118,6 +117,7 @@ public class SerialPortUtil {
             Log.d(TAG, "srcBuffer is null ");
             return;
         }
+
         byte[] destBuff = new byte[srcBuffer.length];
         System.arraycopy(srcBuffer, 0, destBuff, 0, srcBuffer.length);
 
@@ -128,17 +128,11 @@ public class SerialPortUtil {
         Log.d(TAG, "Command " + flag);
         switch (flag) {
             case 1:
-                //测试链接.
-                Log.d(TAG, "链接成功");
-                byte[] moduleCheckByte = moduleCheck();
-                String model = ByteUtil.bytesToHexString(moduleCheckByte);
-                SerialPortUtil.getInstance().sendBuffer(moduleCheckByte);
-                Log.d(TAG, "检测核酸设备是否能正常工作" + model);
+                getCheckFirst(destBuff);
                 break;
             case 2:
                 //检测核酸设备是否能正常工作.
                 getModuleCheckData(destBuff);
-                Log.d(TAG, "模块检测成功");
                 break;
             case 3:
                 //接收核酸检测设备检测数据.
@@ -155,6 +149,7 @@ public class SerialPortUtil {
      * @return
      */
     private byte[] moduleCheck() {
+        // TODO: 2017/11/25 第二步：发送设备正常检测
         byte[] buff = new byte[12];
         int index = 0;
         index = ByteUtil.byte_tobuff("CV".getBytes(), buff, index);
@@ -179,27 +174,26 @@ public class SerialPortUtil {
         return buff;
     }
 
-    /**
-     * 测试连接
-     */
     public void testConn() {
+        // TODO: 2017/11/25 发送第一步的测试链接
         Log.d(TAG, "发送测试链接中...");
         sendBuffer(testConnections());
-        //5秒后检查设备标志
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                //设备未检查到，跳转至维护页面
-                if (!CardApplication.getInstance().isDeviceOn()) {
-                    RxBus.get().post("testConn", "0");
-                    //继续请求
-                    testConn();
-                }
-            }
-        }, 5 * 1000);
+//        5秒后检查设备标志
+//        new Handler().postDelayed(new Runnable() {
+//            @Override
+//            public void run() {
+//                //设备未检查到，跳转至维护页面
+//                if (!CardApplication.getInstance().isDeviceOn()) {
+//                    RxBus.get().post("testConn", "0");
+//                    //继续请求
+//                    testConn();
+//                }
+//            }
+//        }, 5 * 1000);
     }
 
     private byte[] testConnections() {
+        // TODO: 2017/11/25 第一步：发送通信正常测试
         byte[] buff = new byte[12];
         int index = 0;
 
@@ -224,14 +218,29 @@ public class SerialPortUtil {
         return buff;
     }
 
+    /**
+     * 测试第一步通信是否正常返回的数据
+     *
+     * @param destBuff
+     */
+    private void getCheckFirst(byte[] destBuff) {
+        Log.i(TAG, Integer.valueOf(destBuff[10]) + "," + Integer.valueOf(destBuff[11]));
+        if (0x00 == Integer.valueOf(destBuff[10])) {
+            byte[] moduleCheckByte = moduleCheck();
+            String model = ByteUtil.bytesToHexString(moduleCheckByte);
+            SerialPortUtil.getInstance().sendBuffer(moduleCheckByte);
+            Log.d(TAG, "检测核酸设备是否能正常工作" + model);
+            Log.d(TAG, "测试链接成功");
+        }
+    }
+
     private void getModuleCheckData(byte[] destBuff) {
         String moduleDesc = "";
         String status;
 
-        if (0x55 == Integer.valueOf(destBuff[10]) || 0xFF == Integer.valueOf(destBuff[10])) {
+        if (85 == Integer.valueOf(destBuff[11])) {
             //各模块正常.
             status = "1";
-            moduleDesc = "各模块正常";
             CardApplication.setStatus("1");
             CardApplication.getInstance().setDevice(true);
             RxBus.get().post("checkModule", status);
@@ -243,7 +252,7 @@ public class SerialPortUtil {
                     sendStartTestCmd();
                 }
             }, 3 * 1000);*/
-
+            Log.d(TAG, "模块检测成功");
         } else {
             if (0xBB == Integer.valueOf(destBuff[11])) {
                 moduleDesc = "功能禁止";
@@ -260,7 +269,11 @@ public class SerialPortUtil {
         //CardApplication.setNote(moduleDesc);
     }
 
+    /**
+     * @return
+     */
     public byte[] sendStartTestCmd() {
+        // TODO: 2017/11/25 第三步：开始发送数据
         byte[] buff = new byte[12];
         int index = 0;
 
@@ -270,7 +283,7 @@ public class SerialPortUtil {
         index = ByteUtil.int_tobuff(0xFF, buff, index);
         index = ByteUtil.int_tobuff(0xFF, buff, index);
 
-        index = ByteUtil.int_tobuff(0x02, buff, index);
+        index = ByteUtil.int_tobuff(0x03, buff, index);
         index = ByteUtil.int_tobuff(0x00, buff, index);
 
         index = ByteUtil.int_tobuff(0x03, buff, index);
@@ -293,9 +306,12 @@ public class SerialPortUtil {
     private void receiveCheckCardData(byte[] destBuff) {
         if (0x00 == destBuff[10]) {
             // TODO: 2017/11/24 获取到正常的串口数据处理
-            //获取温度值并刷新页面
-            Log.i(TAG, "温度：" + Integer.valueOf(destBuff[11]));
-            CardApplication.heSuanTemperature = Integer.parseInt(destBuff[11] + "", 16);
+            //获取温度值并刷新页面(2,E7 743 /10 -10)
+            Log.i(TAG, "温度：" + destBuff[11] + "," + destBuff[12] + "," + (destBuff[11] & 0xFF) + "," + (destBuff[12] & 0xFF));
+            String s = Integer.toHexString(destBuff[11] & 0xFF) + Integer.toHexString(destBuff[12] & 0xFF);
+            Integer integer = Integer.valueOf(s, 16);
+            float v = (integer / 10f) - 10;
+            CardApplication.heSuanTemperature = v;
             RxBus.get().post("temperature", CardApplication.heSuanTemperature + "");
 
             List<List<Integer>> yAxisValues = CardApplication.yAxisValues;
@@ -303,18 +319,18 @@ public class SerialPortUtil {
 //            从12位开始，每四组数据为一个荧光管的光强值，共16组荧光管光强值。
 //            每次重新获取，会给16组数据中各添加新的光强值
             for (int i = 0; i < 16; i++) {
-                int a = Integer.parseInt(destBuff[12 + i * 4] + "", 16);
-                int b = Integer.parseInt(destBuff[13 + i * 4] + "", 16);
-                int c = Integer.parseInt(destBuff[14 + i * 4] + "", 16);
-                int d = Integer.parseInt(destBuff[15 + i * 4] + "", 16);
-                Integer e = a + b + c + d;
+                String string = Integer.toHexString(destBuff[13 + i * 4] & 0xFF) +
+                        Integer.toHexString(destBuff[14 + i * 4] & 0xFF) +
+                        Integer.toHexString(destBuff[15 + i * 4] & 0xFF) +
+                        Integer.toHexString(destBuff[16 + i * 4] & 0xFF);
+                Integer lex = Integer.valueOf(string, 16);
 
                 if (yAxisValues.size() < i + 1) {
                     List<Integer> line = new ArrayList<>();
-                    line.add(e);
+                    line.add(lex);
                     yAxisValues.add(line);
                 } else {
-                    yAxisValues.get(i).add(e);
+                    yAxisValues.get(i).add(lex);
                 }
             }
             CardApplication.yAxisValues = yAxisValues;
@@ -355,6 +371,7 @@ public class SerialPortUtil {
                     byte[] buffer = new byte[512];
                     size = mInputStream.read(buffer);
                     if (size > 0) {
+                        // TODO: 2017/11/25 获取到串口的数据
                         onDataReceive(buffer, size);
                     }
 
@@ -368,5 +385,4 @@ public class SerialPortUtil {
             }
         }
     }
-
 }

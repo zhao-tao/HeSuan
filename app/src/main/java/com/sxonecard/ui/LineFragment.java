@@ -501,7 +501,7 @@ public class LineFragment extends BaseFragment {
                                     @Override
                                     public void run() {
                                         lcm.showLineChart(xAxisValues, yAxisValues, labels, colours);
-                                        Toast.makeText(context, gson.toJson(yAxisValues), Toast.LENGTH_LONG).show();
+//                                        Toast.makeText(context, gson.toJson(yAxisValues), Toast.LENGTH_LONG).show();
                                     }
                                 });
                             }

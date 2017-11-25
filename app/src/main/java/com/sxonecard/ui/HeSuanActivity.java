@@ -13,6 +13,7 @@ import com.sxonecard.CardApplication;
 import com.sxonecard.R;
 import com.sxonecard.base.BaseFragment;
 import com.sxonecard.base.RxBus;
+import com.sxonecard.http.serialport.SerialPortUtil;
 
 import java.lang.ref.WeakReference;
 
@@ -45,11 +46,11 @@ public class HeSuanActivity extends FragmentActivity {
 
     //初始化设备，开启测试连接
     private void initDevice() {
-        //发送测试链接.
-//        SerialPortUtil.getInstance().testConn();
+        SerialPortUtil.getInstance().testConn();
     }
 
     private void registerBus() {
+//        TODO: 2017/11/25：第一步测试的接收
         testConnObservable = RxBus.get().register("testConn", String.class);
         testConnObservable.subscribe(new Action1<String>() {
             @Override
@@ -62,14 +63,11 @@ public class HeSuanActivity extends FragmentActivity {
                     navHandler.sendMessage(msg);
                 } else {
                     CardApplication.getInstance().setDeviceSuccess(true);
-                    //navHandler.sendEmptyMessage(0);
-//                    Intent intent = new Intent();
-//                    intent.setClass(HeSuanActivity.this, LineFragment.class);
-//                    HeSuanActivity.this.startActivity(intent);
                 }
             }
         });
 
+        // TODO: 2017/11/25 第二步测试的接收
         checkModuleObservable = RxBus.get().register("checkModule", String.class);
         checkModuleObservable.subscribe(new Action1<String>() {
             @Override

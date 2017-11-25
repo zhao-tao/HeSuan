@@ -42,7 +42,7 @@ public class CardApplication extends Application {
         CardApplication.status = status;
     }
 
-    public static int heSuanTemperature;
+    public static float heSuanTemperature;
     private static CardApplication instance;
     public static CardApplication getInstance() {
         return instance;
