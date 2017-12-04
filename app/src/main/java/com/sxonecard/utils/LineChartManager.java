@@ -109,7 +109,7 @@ public class LineChartManager {
         lineDataSet.setFormLineWidth(1f);
         lineDataSet.setFormSize(15.f);
         //线模式为圆滑曲线（默认折线）
-        //lineDataSet.setMode(LineDataSet.Mode.CUBIC_BEZIER);
+        lineDataSet.setMode(LineDataSet.Mode.CUBIC_BEZIER);
     }
 
     /**

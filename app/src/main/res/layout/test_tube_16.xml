@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_test"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:background="@drawable/setbar_bg"
     android:orientation="vertical">
 
     <TextView
         android:id="@+id/number"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="50dp"
         android:gravity="center"
+        android:lines="2"
         android:text="@string/positive"
-        android:textSize="25sp"
-        />
+        android:textColor="@android:color/black"
+        android:textSize="20sp" />
 
 </LinearLayout>

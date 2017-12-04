@@ -21,6 +21,10 @@ import butterknife.ButterKnife;
 import rx.Observable;
 import rx.functions.Action1;
 
+import static com.sxonecard.http.Constants.PAGE_CHART;
+import static com.sxonecard.http.Constants.PAGE_CONN_ERR;
+import static com.sxonecard.http.Constants.PAGE_DEVICE_ERR;
+
 
 /**
  * Created by HeQiang on 2017/4/22.
@@ -50,7 +54,7 @@ public class HeSuanActivity extends FragmentActivity {
     }
 
     private void registerBus() {
-//        TODO: 2017/11/25：第一步测试的接收
+//        TODO: 2017/11/25：第一步测试的接收（0连接异常）
         testConnObservable = RxBus.get().register("testConn", String.class);
         testConnObservable.subscribe(new Action1<String>() {
             @Override
@@ -58,7 +62,7 @@ public class HeSuanActivity extends FragmentActivity {
                 if ("0".equals(testConnStr.trim())) {
                     //测试链接故障.
                     Message msg = new Message();
-                    msg.what = 404;
+                    msg.what = PAGE_CONN_ERR;
                     msg.obj = getApplicationContext().getText(R.string.conn_err);
                     navHandler.sendMessage(msg);
                 } else {
@@ -73,14 +77,14 @@ public class HeSuanActivity extends FragmentActivity {
             @Override
             public void call(String status) {
                 if (!"1".equals(status.trim())) {
-                    //硬件故障,跳转至维护页面.
+                    //硬件故障,跳转至维护页面，当前没有不等于1的情况
                     Message msg = new Message();
-                    msg.what = 405;
+                    msg.what = PAGE_DEVICE_ERR;
                     msg.obj = getApplicationContext().getText(R.string.device_err);
                     navHandler.sendMessage(msg);
                 } else {
                     //硬件检测正常,跳转至检测画面.
-                    navHandler.sendEmptyMessage(0);
+                    navHandler.sendEmptyMessage(PAGE_CHART);
                 }
             }
         });
@@ -120,6 +124,7 @@ public class HeSuanActivity extends FragmentActivity {
 
     /**
      * 切换页面状态（连接错误，设备错误等）
+     *
      * @param index
      * @param obj
      */
@@ -132,13 +137,13 @@ public class HeSuanActivity extends FragmentActivity {
         BaseFragment fragment = null;
         last_action = index;
         switch (index) {
-            case 0:
+            case PAGE_CHART:
                 fragment = new LineFragment();
                 break;
-            case 404:
+            case PAGE_CONN_ERR:
                 fragment = new ConnException();
                 break;
-            case 405:
+            case PAGE_DEVICE_ERR:
                 fragment = new DeviceException();
                 break;
             default:

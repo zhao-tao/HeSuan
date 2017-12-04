@@ -236,6 +236,7 @@ public class SerialPortUtil {
     }
 
     private void getModuleCheckData(byte[] destBuff) {
+//        模块异常状态
         String moduleDesc = "";
         String status;
 
@@ -268,7 +269,7 @@ public class SerialPortUtil {
             status = "0";
             CardApplication.setStatus(status);
         }
-        //CardApplication.setNote(moduleDesc);
+//        CardApplication.setNote(moduleDesc);
     }
 
     /**

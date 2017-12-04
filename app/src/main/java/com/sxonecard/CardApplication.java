@@ -21,18 +21,14 @@ import java.util.concurrent.atomic.AtomicBoolean;
  */
 
 public class CardApplication extends Application {
-    public static int index = 0;
     public static List<List<Integer>> yAxisValues = new ArrayList<List<Integer>>();
     public static List<FunctionData> shiGuanData = new ArrayList<FunctionData>(16);
 
     private int timeCount;
+//    设备状态，1正常，0异常
     public static String status;
-    /**
-     * 荧光阈值.
-     */
+//    默认荧光阈值
     public static int limitLineValue = 1000;
-
-    public static  List<FunctionData> fd_list = new ArrayList<FunctionData>();
 
     public static String getStatus() {
         return status;
@@ -92,8 +88,8 @@ public class CardApplication extends Application {
                         5 * 1000, 10 * 1000))
                 .build();
         ImageLoader.getInstance().init(configuration);
-        CrashHandler crashHandler = CrashHandler.getInstance();
-        crashHandler.init(this);
+//        CrashHandler crashHandler = CrashHandler.getInstance();
+//        crashHandler.init(this);
     }
 
     public int getTimeCount() {

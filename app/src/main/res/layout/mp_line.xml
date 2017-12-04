@@ -59,83 +59,14 @@
 
     <GridView
         android:id="@+id/shiguan_grid"
-        android:layout_width="950dp"
-        android:layout_height="350dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginLeft="90dp"
-        android:layout_marginRight="195dp"
-        android:layout_marginStart="93dp"
-        android:layout_marginTop="550dp"
-        android:width="1dp"
-        android:horizontalSpacing="0dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginBottom="10dp"
         android:numColumns="9"
-        android:verticalSpacing="0dp" />
-
-    <!-- 样本浓度布局 -->
-    <TableLayout
-        android:layout_width="250dp"
-        android:layout_height="68dp"
-        android:layout_marginLeft="1080dp"
-        android:layout_marginTop="560dp"
-        android:background="@color/black"
-        android:stretchColumns="*">
-
-        <TableRow>
-
-            <TextView
-                android:layout_height="30dp"
-                android:layout_gravity="center_vertical"
-                android:layout_margin="1dp"
-                android:background="@color/white"
-                android:gravity="center"
-                android:text="@string/sample" />
-
-            <TextView
-                android:layout_height="30dp"
-                android:layout_margin="1dp"
-                android:background="@color/white"
-                android:gravity="center"
-                android:text="@string/concentration" />
-
-            <TextView
-                android:layout_height="30dp"
-                android:layout_margin="1dp"
-                android:background="@color/white"
-                android:gravity="center"
-                android:text="@string/result" />
-        </TableRow>
-
-        <TableRow>
-
-            <Spinner
-                android:id="@+id/sample_values"
-                android:layout_height="32dp"
-                android:layout_margin="1dp"
-                android:background="@color/white"
-                android:gravity="center" />
-
-            <EditText
-                android:id="@+id/concentration_values"
-                android:layout_height="32dp"
-                android:layout_margin="1dp"
-                android:background="@color/white"
-                android:digits="1234567890"
-                android:gravity="center"
-                android:inputType="number"
-                android:maxLength="10"
-                android:text="0" />
-
-            <TextView
-                android:id="@+id/result_values"
-                android:layout_height="32dp"
-                android:layout_margin="1dp"
-                android:background="@color/white"
-                android:gravity="center"
-                android:text="@string/negative" />
-        </TableRow>
-    </TableLayout>
+         />
 
     <!--设备温度等按钮布局 -->
     <TableLayout
@@ -170,7 +101,7 @@
                 android:layout_width="40dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="10dp"
-                android:background="@drawable/banniu_4" />
+                android:text="对比" />
 
             <Button
                 android:id="@+id/huanyuan"
@@ -178,7 +109,7 @@
                 android:layout_height="50dp"
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="10dp"
-                android:background="@drawable/banniu_5" />
+                android:text="还原" />
         </TableRow>
 
         <TableRow>
@@ -188,7 +119,7 @@
                 android:layout_width="40dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="10dp"
-                android:background="@drawable/anniu_2" />
+                android:text="阈值固定" />
 
             <Button
                 android:id="@+id/back"
@@ -196,7 +127,7 @@
                 android:layout_height="50dp"
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="10dp"
-                android:background="@drawable/anniu_4" />
+                android:text="返回" />
         </TableRow>
 
         <TableRow>

@@ -1,22 +1,23 @@
 package com.sxonecard.ui;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.method.DigitsKeyListener;
+import android.text.InputType;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.NumberPicker;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -63,16 +64,6 @@ public class LineFragment extends BaseFragment {
     Button upmove;
     @Bind(R.id.downMove)
     Button downMove;
-    //    @Bind(R.id.sample_values)
-//    TextView sampleValues;
-    @Bind(R.id.concentration_values)
-    EditText concentrationValues;
-    @Bind(R.id.result_values)
-    TextView resultValues;
-    @Bind(R.id.sample_values)
-    Spinner sampleValues;
-    //    @Bind(R.id.function_selected)
-//    Spinner functionSelected;
     @Bind(R.id.number_picker)
     NumberPicker numberPicker;
 
@@ -91,62 +82,80 @@ public class LineFragment extends BaseFragment {
     private int minNumber = 1, maxNumber = 200;
     //调节荧光值按钮的步进值（初始值）
     private static int stepNumber = 1;
-
-    //    private static List<List<Integer>> yAxisValues = new ArrayList<List<Integer>>();
-    private List<String> shiGuanValuesLst = new ArrayList<>();
-
-    //样本.
-    private List<String> data_list;
-    private ArrayAdapter<String> arr_adapter;
-
-    //函数选择.
-    // private List<String> functionDataList;
-    // private ArrayAdapter<String> functionArrAdapter;
-
-    //选择的样本值.（标准，待测，空）
-    private int selectedSampleValue = 0;
-    //选择的函数类型.
-    // private int selectedFunction;
-    //输入的浓度值.
-    private double selectedConcentration;
-
+    //    试管表格显示的参数值
+    private List<String> shiGuanValuesList = new ArrayList<>();
     //是否进行对比按钮标识.
     private boolean dbFlag;
+    private CommonAdapter<String> valueAdapter;
+    private LineChartManager lcm = null;
+
+    //试管对比的参数
+    private List<List<Integer>> abValues;
+    //当前点击的试管在表格中的位置
+    private int clickPosition;
+    //图表空数组
+    public List<List<Integer>> nullValues = new ArrayList<List<Integer>>();
 
     @Override
     public int getLayoutId() {
         return R.layout.mp_line;
     }
 
-    LineChartManager lcm = null;
-
     @Override
     public void initView() {
         lcm = new LineChartManager(chart);
-        //输入浓度.
-        //temperature.setText("当前温度\n" + (null == CardApplication.heSuanTemperature ? "0 °C" : CardApplication.heSuanTemperature));
-        //deviceStatus.setText("\n\n\n设备状态\n正常");
         initListener();
+//        初始化阈值步进值选择器
         initNumber();
-        //限制输入固定的某些字符
-        concentrationValues.setKeyListener(DigitsKeyListener.getInstance("0123456789"));
-        //resultValues.setKeyListener(DigitsKeyListener.getInstance("0123456789"));
-        //样本下拉框.
-        sampleSelect();
         //函数下拉框.
-        functionSelect();
+//        functionSelect();
         initLineChart();
         initShiGuanView();
         registerReceiveDataBus();
-        dramLineChart(lcm);
+        drawLineChart(lcm);
     }
 
     private void initListener() {
         startSendRequest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Toast.makeText(LineFragment.super.context, "开始向串口发送检测请求...", Toast.LENGTH_LONG).show();
-//                SerialPortUtil.getInstance().sendStartTestCmd();
+                SerialPortUtil.getInstance().sendStartTestCmd();
+                startSendRequest.setEnabled(false);
+            }
+        });
+
+        duibi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(LineFragment.super.context, "请选择要对比的试剂", Toast.LENGTH_SHORT).show();
+                duibi.setEnabled(false);
+                dbFlag = true;
+                lcm.showLineChart(xAxisValues, nullValues, labels, colours);
+            }
+        });
+
+        huanyuan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (!dbFlag) {
+                    return;
+                }
+                dbFlag = false;
+                valueAdapter.notifyDataSetChanged();
+                duibi.setEnabled(true);
+                if (null != abValues) {
+                    abValues.clear();
+                }
+
+                drawLineChart(lcm);
+            }
+        });
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().finish();
+//                startActivity(new Intent(LineFragment.super.getContext(), HeSuanActivity.class));
             }
         });
 
@@ -222,75 +231,45 @@ public class LineFragment extends BaseFragment {
 //            }
 //        });
         //lcm.setHightLimitLine(CardApplication.limitLineValue, "荧光阈值", Color.BLACK);
-
-        /**
-         * 对比
-         */
-        duibi.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(LineFragment.super.context, "开始进行对比...", Toast.LENGTH_LONG).show();
-                dbFlag = true;
-            }
-        });
-        /**
-         * 还原
-         */
-        huanyuan.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dramLineChart(lcm);
-            }
-        });
-
-        back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                getActivity().finish();
-//                startActivity(new Intent(LineFragment.super.getContext(), HeSuanActivity.class));
-            }
-        });
     }
 
     List<String> labels = new ArrayList<String>();
     List<Integer> colours = new ArrayList<Integer>();
     List<Integer> xAxisValues = new ArrayList<Integer>();
 
-    private void dramLineChart(LineChartManager lcm) {
-        labels.add("A1");
+    private void drawLineChart(LineChartManager lcm) {
         colours.add(Color.BLACK);
-        labels.add("B2");
+        labels.add("A1");
         colours.add(Color.BLUE);
-        labels.add("C3");
+        labels.add("B1");
         colours.add(Color.CYAN);
-        labels.add("D4");
+        labels.add("C1");
         colours.add(Color.DKGRAY);
-        labels.add("E5");
+        labels.add("D1");
         colours.add(Color.GRAY);
-        labels.add("F6");
+        labels.add("E1");
         colours.add(Color.GREEN);
-        labels.add("G7");
+        labels.add("F1");
         colours.add(Color.LTGRAY);
-        labels.add("H8");
+        labels.add("G1");
         colours.add(Color.MAGENTA);
-        labels.add("A2");
+        labels.add("H1");
         colours.add(Color.RED);
-        labels.add("B2");
+        labels.add("A2");
         colours.add(Color.TRANSPARENT);
-        labels.add("C2");
+        labels.add("B2");
         colours.add(Color.YELLOW);
-        labels.add("D2");
+        labels.add("C2");
         colours.add(Color.BLUE);
-        labels.add("E2");
+        labels.add("D2");
         colours.add(Color.CYAN);
+        labels.add("E2");
+        colours.add(Color.DKGRAY);
         labels.add("F2");
         colours.add(Color.DKGRAY);
         labels.add("G2");
-        colours.add(Color.DKGRAY);
-        labels.add("H2");
         colours.add(Color.GRAY);
-
-//        LineChartManager lcm = new LineChartManager(chart);
+        labels.add("H2");
 
         for (int i = 0; i <= 60; i++) {
             xAxisValues.add(i);
@@ -305,6 +284,7 @@ public class LineFragment extends BaseFragment {
 //            }
 //            yAxisValues.add(line);
 //        }
+
         lcm.showLineChart(xAxisValues, yAxisValues, labels, colours);
     }
 
@@ -335,34 +315,6 @@ public class LineFragment extends BaseFragment {
 //            }
 //        });
     }
-
-    private void sampleSelect() {
-        data_list = new ArrayList<String>();
-        data_list.add("标准");
-        data_list.add("待测");
-        data_list.add("空");
-        //适配器
-        arr_adapter = new ArrayAdapter<String>(this.context, android.R.layout.simple_spinner_item, data_list);
-        //设置样式
-        arr_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        //加载适配器
-        sampleValues.setAdapter(arr_adapter);
-        sampleValues.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            // parent： 为控件Spinner   view：显示文字的TextView   position：下拉选项的位置从0开始
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                //获取Spinner控件的适配器
-                ArrayAdapter<String> adapter = (ArrayAdapter<String>) parent.getAdapter();
-                Log.i("====下拉框", adapter.getItem(position));
-                selectedSampleValue = position;
-            }
-
-            //没有选中时的处理
-            public void onNothingSelected(AdapterView<?> parent) {
-            }
-        });
-    }
-
-
 
     /*private void drawFunctionChart(LineChartManager lcm, Map<String, List<Double>> dataMap) {
 
@@ -432,28 +384,46 @@ public class LineFragment extends BaseFragment {
      * 设置底部的十六个试管显示数据
      */
     private void initShiGuanView() {
-        // List<FunctionData> testData = new ArrayList<FunctionData>(16);
-        FunctionData funData = null;
+        FunctionData funData;
         for (int i = 0; i < 16; i++) {
             funData = new FunctionData();
             CardApplication.shiGuanData.add(funData);
         }
-        shiGuanValuesLst = Arrays.asList("*", "A", "B", "C", "D", "E", "F", "G", "H",
-                "1", "阴性", "阴性", "阴性", "阴性", "阴性", "阴性", "阴性", "阴性", "2", "阴性", "阴性",
-                "阴性", "阴性", "阴性", "阴性", "阴性", "阴性");
 
-        Log.i("LineAivity", shiGuanValuesLst.size() + "============");
-        shiguanGrid.setAdapter(new CommonAdapter<String>(getContext(), R.layout.test_tube_16, shiGuanValuesLst) {
+        shiGuanValuesList = Arrays.asList("*", "A", "B", "C", "D", "E", "F", "G", "H",
+                "1", "空", "空", "空", "空", "空", "空", "空", "空", "2", "空", "空",
+                "空", "空", "空", "空", "空", "空");
+
+        valueAdapter = new CommonAdapter<String>(getContext(), R.layout.test_tube_16, shiGuanValuesList) {
             @Override
             protected void convert(ViewHolder viewHolder, String item, int position) {
-                viewHolder.setText(R.id.number, item);
+//                非对比更改文字，对比更改文字颜色
+                TextView view = viewHolder.getView(R.id.number);
+                if (!dbFlag) {
+                    viewHolder.setText(R.id.number, item);
+                    view.setTextColor(Color.BLACK);
+                } else {
+                    if (position == clickPosition) {
+
+                        if (view.getCurrentTextColor() == Color.BLACK) {
+                            view.setTextColor(Color.RED);
+                        } else {
+                            view.setTextColor(Color.BLACK);
+                        }
+                    }
+                }
             }
-        });
+        };
+
+        shiguanGrid.setAdapter(valueAdapter);
+
         shiguanGrid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
                 if ((position >= 10 && position <= 17) || (position >= 19 && position <= 26)) {
+                    clickPosition = position;
                     int index;
                     if (position >= 19) {
                         index = position - 11;
@@ -461,24 +431,29 @@ public class LineFragment extends BaseFragment {
                         index = position - 10;
                     }
                     if (dbFlag) {
-                        //触发对比按钮后画单个试管曲线.
-                        // yAxisValues.
-                        //dramLineChart(lcm);
-                    } else {
-                        Log.i("输入浓度", concentrationValues.getText().toString());
-                        selectedConcentration = Double.parseDouble(concentrationValues.getText().toString());
-                        concentrationValues.setText("0");//获取浓度后重置为0.
+                        //触发对比按钮后画单个试管曲线.表格中添加背景色标注(再次点击取消显示)
+                        if (CardApplication.shiGuanData.get(index).getTestSample() == 0) {
+                            Toast.makeText(context, "空值无法加入对比！", Toast.LENGTH_SHORT).show();
+                        } else {
+                            if (null == abValues) {
+                                abValues = new ArrayList<List<Integer>>();
+                            }
+                            if (abValues.contains(yAxisValues.get(index))) {
+                                abValues.remove(yAxisValues.get(index));
+                            } else {
+                                abValues.add(yAxisValues.get(index));
+                            }
+                            valueAdapter.notifyDataSetChanged();
+                            if (abValues.size() > 0) {
+                                lcm.showLineChart(xAxisValues, abValues, labels, colours);
+                            } else {
+                                lcm.showLineChart(xAxisValues, nullValues, labels, colours);
+                            }
+                        }
 
-                        String testTubeDesc = shiGuanValuesLst.get(position);
-                        Toast.makeText(LineFragment.super.context, "保存试管" + index + "浓度:" + selectedConcentration,
-                                Toast.LENGTH_LONG).show();
-                        FunctionData funData = new FunctionData();
-                        funData.setTestNumber(index);
-                        funData.setTestSample(selectedSampleValue);
-                        funData.setTestConcentration(selectedConcentration);
-                        funData.setSetValue(true);
-                        CardApplication.shiGuanData.set(index, funData);
-                        Log.i("试管浓度保存完成", index + "");
+
+                    } else {
+                        showSetDialog(index);
                     }
                 }
             }
@@ -554,5 +529,88 @@ public class LineFragment extends BaseFragment {
     public void onDestroyView() {
         super.onDestroyView();
         ButterKnife.unbind(this);
+    }
+
+    int yourChoice;
+
+    /**
+     * 设置试管参数的对话框（在开始接收数据之前）
+     * 入参:试管的编号
+     */
+    private void showSetDialog(final int index) {
+        final String[] items = {"空", "标准", "待测"};
+        final EditText editText = new EditText(context);
+        editText.setInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_FLAG_DECIMAL);
+        editText.setHint("请在此处输入试剂浓度值");
+        Double testConcentration = CardApplication.shiGuanData.get(index).getTestConcentration();
+        if (0.0 != testConcentration) {
+            editText.setText(testConcentration.toString());
+        }
+
+        yourChoice = CardApplication.shiGuanData.get(index).getTestSample();
+        AlertDialog.Builder setDialog = new AlertDialog.Builder(context);
+        setDialog.setTitle(indexToTable(index) + "试管参数设置：");
+
+        setDialog.setSingleChoiceItems(items, yourChoice, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                yourChoice = which;
+            }
+        });
+        setDialog.setView(editText);
+
+        setDialog.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+//               1 将设置的值保存到全局参数，2 将当前的值显示在表格中
+                if (yourChoice != 0) {
+                    CardApplication.shiGuanData.get(index).setTestSample(yourChoice);
+                    if (TextUtils.isEmpty(editText.getText())) {
+                        CardApplication.shiGuanData.get(index).setTestConcentration(0);
+                        shiGuanValuesList.set(indexForValue(index), items[yourChoice]);
+                    } else {
+                        CardApplication.shiGuanData.get(index).setTestConcentration(Double.valueOf(editText.getText().toString()));
+                        shiGuanValuesList.set(indexForValue(index), items[yourChoice] + " " + editText.getText());
+//                      测试完成后换行添加显示结果 + "\n" + "阴性"
+                    }
+                } else {
+                    shiGuanValuesList.set(indexForValue(index), "空");
+                    CardApplication.shiGuanData.get(index).setTestSample(0);
+                    CardApplication.shiGuanData.get(index).setTestConcentration(0);
+                }
+                valueAdapter.notifyDataSetChanged();
+            }
+        });
+        setDialog.show();
+    }
+
+    /**
+     * 试管编号转换为表格坐标(试管编号从0开始)
+     *
+     * @param index
+     */
+    private String indexToTable(int index) {
+        String[] s = {"A", "B", "C", "D", "E", "F", "G", "H"};
+        String num = null;
+        if (index < 8) {
+            num = s[index] + 1;
+        } else {
+            num = s[index - 8] + 2;
+        }
+        return num;
+    }
+
+    /**
+     * 试管编号对应表格的编号
+     *
+     * @param index
+     */
+    private int indexForValue(int index) {
+        if (index < 8) {
+            index = index + 10;
+        } else {
+            index = index + 11;
+        }
+        return index;
     }
 }
