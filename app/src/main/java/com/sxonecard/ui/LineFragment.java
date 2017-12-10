@@ -450,14 +450,19 @@ public class LineFragment extends BaseFragment {
                                 lcm.showLineChart(xAxisValues, nullValues, labels, colours);
                             }
                         }
-
-
                     } else {
                         showSetDialog(index);
                     }
                 }
             }
         });
+    }
+
+    /**
+     * 只展示部分曲线显示(0~15之内任意组)
+     */
+    private void showLessLine(int[] index) {
+
     }
 
     private void registerReceiveDataBus() {
@@ -476,17 +481,11 @@ public class LineFragment extends BaseFragment {
                                     @Override
                                     public void run() {
                                         lcm.showLineChart(xAxisValues, yAxisValues, labels, colours);
-//                                        Toast.makeText(context, gson.toJson(yAxisValues), Toast.LENGTH_LONG).show();
                                     }
                                 });
                             }
                         }).start();
-
-//                        Gson gson = new Gson();
-//                        Toast.makeText(context, gson.toJson(yAxisValues), Toast.LENGTH_LONG).show();
                     }
-//                    yAxisValues = gson.fromJson(data, List.class);
-//                    lcm.showLineChart(xAxisValues, yAxisValues, labels, colours);
                 }
             }
         });

@@ -5,7 +5,6 @@ package com.sxonecard.http.serialport;
  */
 
 import android.util.Log;
-import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.sxonecard.CardApplication;
@@ -314,7 +313,7 @@ public class SerialPortUtil {
             Log.i(TAG, "温度：" + destBuff[11] + "," + destBuff[12] + "," + (destBuff[11] & 0xFF) + "," + (destBuff[12] & 0xFF));
             String s = Integer.toHexString(destBuff[11] & 0xFF) + Integer.toHexString(destBuff[12] & 0xFF);
             Integer integer = Integer.valueOf(s, 16);
-            float v = (integer / 10f) - 10;
+            float v = integer / 10f;
             CardApplication.heSuanTemperature = v;
             RxBus.get().post("temperature", CardApplication.heSuanTemperature + "");
 
@@ -322,6 +321,7 @@ public class SerialPortUtil {
             Gson gson = new Gson();
 //            从12位开始，每四组数据为一个荧光管的光强值，共16组荧光管光强值。
 //            每次重新获取，会给16组数据中各添加新的光强值
+
             for (int i = 0; i < 16; i++) {
                 String string = Integer.toHexString(destBuff[13 + i * 4] & 0xFF) +
                         Integer.toHexString(destBuff[14 + i * 4] & 0xFF) +
@@ -337,28 +337,26 @@ public class SerialPortUtil {
                     yAxisValues.get(i).add(lex);
                 }
             }
+
+            Log.i("yAxisValues", "真实核酸检测数据..." + gson.toJson(yAxisValues));
+
+//            优化曲线，曲线第十个点之后，如果下降趋势大于2则规定只减2
+            if (yAxisValues.get(0).size() > 10) {
+                for (int i = 0; i < 16; i++) {
+                    int size = yAxisValues.get(i).size();
+                    int j = yAxisValues.get(i).get(size - 2) - yAxisValues.get(i).get(size - 1);
+                    if (j > 5) {
+                        yAxisValues.get(i).set(size - 1, yAxisValues.get(i).get(size - 2) - 2);
+                    }
+                }
+            }
+
             CardApplication.yAxisValues = yAxisValues;
             RxBus.get().post("receData", gson.toJson(yAxisValues));
-            Log.i("yAxisValues", "接收核酸检测数据..." + gson.toJson(yAxisValues));
+            Log.i("yAxisValues", "优化核酸检测数据..." + gson.toJson(yAxisValues));
         } else {
             Log.e(TAG, "receive HeSuan data error:" + destBuff[10]);
         }
-//        String byteString = ByteUtil.bytesToHexString(destBuff);
-//        String balance = byteString.substring(11 * 2, 15 * 2);
-//        String cardNumber = byteString.substring(19 * 2, 23 * 2);
-//        String cardNumDate = byteString.substring(27 * 2, 31 * 2);
-//        String cardType = byteString.substring(31 * 2, 33 * 2);
-//        String cardStatus = byteString.substring(33 * 2, 34 * 2);
-//        int value = 0;
-//        try {
-//            value = Integer.parseInt(balance, 16);
-//        } catch (Exception e) {
-//
-//        }
-//        RechargeCardBean cardBean = new RechargeCardBean(cardNumber,
-//                value, cardNumDate, cardType, cardStatus);
-//        Gson gson = new Gson();
-//        RxBus.get().post("checkCard", gson.toJson(cardBean));
     }
 
     private class ReadThread extends Thread {
