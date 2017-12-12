@@ -34,6 +34,8 @@ public class LineChartManager {
     public LineChartManager(LineChart mLineChart) {
         this.lineChart = mLineChart;
         leftAxis = lineChart.getAxisLeft();
+//        y轴不从0开始（根据显示的数据来绘制y轴）
+        leftAxis.setStartAtZero(false);
 //        leftAxis.setAxisMaximum(10000);
         rightAxis = lineChart.getAxisRight();
 //        rightAxis.setAxisMaximum(10000);

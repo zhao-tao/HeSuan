@@ -100,6 +100,7 @@ public class ChartUtils {
         if (chart.getData() != null && chart.getData().getDataSetCount() > 0) {
             lineDataSet = (LineDataSet) chart.getData().getDataSetByIndex(0);
             lineDataSet.setValues(values);
+            lineDataSet.setDrawValues(false);
             chart.getData().notifyDataChanged();
             chart.notifyDataSetChanged();
         } else {

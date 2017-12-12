@@ -23,6 +23,7 @@ import android.widget.Toast;
 
 import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.components.LimitLine;
+import com.github.mikephil.charting.components.YAxis;
 import com.google.gson.Gson;
 import com.sxonecard.CardApplication;
 import com.sxonecard.R;
@@ -367,6 +368,9 @@ public class LineFragment extends BaseFragment {
         chart.invalidate();
     }
 
+    /**
+     * 初始化图表参数
+     */
     private void initLineChart() {
         chart.setDrawGridBackground(true); // 是否显示表格颜色
         chart.setGridBackgroundColor(Color.WHITE & 0x70FFFFFF); // 表格的的颜色，在这里是是给颜色设置一个透明度
@@ -378,6 +382,8 @@ public class LineFragment extends BaseFragment {
         chart.setScaleEnabled(true);//设置推动
         chart.setHighlightPerTapEnabled(true);//双击高亮显示
         chart.setDescription(null);//设置图表描述信息
+
+        chart.getAxisLeft();
     }
 
     /**

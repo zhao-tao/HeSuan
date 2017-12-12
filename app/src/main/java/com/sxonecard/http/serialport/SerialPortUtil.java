@@ -37,6 +37,10 @@ public class SerialPortUtil {
     private int baudrate = 115200;
     private boolean isStop = false;
 
+    //    第一次接收到数值的记录和标记
+    private int[] firstNum = new int[16];
+    private boolean isFirst = true;
+
     public static SerialPortUtil getInstance() {
         if (null == portUtil) {
             portUtil = new SerialPortUtil();
@@ -254,7 +258,7 @@ public class SerialPortUtil {
                 }
             }, 3 * 1000);*/
             Log.d(TAG, "模块检测成功");
-            sendStartTestCmd();
+//            sendStartTestCmd();
         } else {
             if (0xBB == Integer.valueOf(destBuff[11])) {
                 moduleDesc = "功能禁止";
@@ -321,13 +325,16 @@ public class SerialPortUtil {
             Gson gson = new Gson();
 //            从12位开始，每四组数据为一个荧光管的光强值，共16组荧光管光强值。
 //            每次重新获取，会给16组数据中各添加新的光强值
-
             for (int i = 0; i < 16; i++) {
                 String string = Integer.toHexString(destBuff[13 + i * 4] & 0xFF) +
                         Integer.toHexString(destBuff[14 + i * 4] & 0xFF) +
                         Integer.toHexString(destBuff[15 + i * 4] & 0xFF) +
                         Integer.toHexString(destBuff[16 + i * 4] & 0xFF);
                 Integer lex = Integer.valueOf(string, 16);
+
+                if (isFirst) {
+                    firstNum[i] = lex;
+                }
 
                 if (yAxisValues.size() < i + 1) {
                     List<Integer> line = new ArrayList<>();
@@ -340,7 +347,23 @@ public class SerialPortUtil {
 
             Log.i("yAxisValues", "真实核酸检测数据..." + gson.toJson(yAxisValues));
 
-//            优化曲线，曲线第十个点之后，如果下降趋势大于2则规定只减2
+
+
+//            设置统一起点（不显示曲线上的数值）
+//            筛选记录每组0位的值，后面数据减去此值(修改每个数组的最后一位值)
+            for (int i = 0; i < 16; i++) {
+                int size = yAxisValues.get(i).size();
+                if (isFirst) {
+                    yAxisValues.get(i).set(0, 0);
+                }
+                if (size > 1) {
+                    yAxisValues.get(i).set(size - 1, yAxisValues.get(i).get(size - 1) - firstNum[i]);
+                }
+            }
+
+            Log.i("yAxisValues", "统一核酸检测数据..." + gson.toJson(yAxisValues));
+
+            //            优化曲线，曲线第十个点之后，如果下降趋势大于5则规定只减2
             if (yAxisValues.get(0).size() > 10) {
                 for (int i = 0; i < 16; i++) {
                     int size = yAxisValues.get(i).size();
@@ -350,10 +373,12 @@ public class SerialPortUtil {
                     }
                 }
             }
+            Log.i("yAxisValues", "优化核酸检测数据..." + gson.toJson(yAxisValues));
 
             CardApplication.yAxisValues = yAxisValues;
             RxBus.get().post("receData", gson.toJson(yAxisValues));
-            Log.i("yAxisValues", "优化核酸检测数据..." + gson.toJson(yAxisValues));
+
+            isFirst = false;
         } else {
             Log.e(TAG, "receive HeSuan data error:" + destBuff[10]);
         }
