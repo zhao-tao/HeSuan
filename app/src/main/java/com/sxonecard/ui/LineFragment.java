@@ -23,7 +23,6 @@ import android.widget.Toast;
 
 import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.components.LimitLine;
-import com.github.mikephil.charting.components.YAxis;
 import com.google.gson.Gson;
 import com.sxonecard.CardApplication;
 import com.sxonecard.R;
@@ -382,8 +381,6 @@ public class LineFragment extends BaseFragment {
         chart.setScaleEnabled(true);//设置推动
         chart.setHighlightPerTapEnabled(true);//双击高亮显示
         chart.setDescription(null);//设置图表描述信息
-
-        chart.getAxisLeft();
     }
 
     /**
