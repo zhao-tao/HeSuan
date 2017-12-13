@@ -371,12 +371,15 @@ public class LineFragment extends BaseFragment {
      * 初始化图表参数
      */
     private void initLineChart() {
+        // TODO: 2017/12/13 设置图表的显示属性
         chart.setDrawGridBackground(true); // 是否显示表格颜色
         chart.setGridBackgroundColor(Color.WHITE & 0x70FFFFFF); // 表格的的颜色，在这里是是给颜色设置一个透明度
         chart.setGridBackgroundColor(Color.WHITE);
-        chart.setTouchEnabled(false); // 设置是否可以触摸
-        chart.setDragEnabled(false);// 是否可以拖拽
-        chart.setScaleEnabled(false);// 是否可以缩放
+        chart.setTouchEnabled(true); // 设置是否可以触摸
+        chart.setDragEnabled(true);// 是否可以拖拽
+//        是否打开图表拖拽惯性滑动，默认打开
+//        chart.setDragDecelerationEnabled(false);
+        chart.setScaleEnabled(true);// 是否可以缩放
         chart.setPinchZoom(false);//X、Y轴同时缩放
         chart.setScaleEnabled(true);//设置推动
         chart.setHighlightPerTapEnabled(true);//双击高亮显示

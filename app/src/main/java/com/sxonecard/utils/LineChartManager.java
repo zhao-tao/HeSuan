@@ -163,6 +163,7 @@ public class LineChartManager {
             dataSets.add(lineDataSet);
         }
         LineData data = new LineData(dataSets);
+        // TODO: 2017/12/13 设置Y轴适应实际值显示，不从0开始
         leftAxis.setStartAtZero(false);
         xAxis.setLabelCount(xAxisValues.size(), true);
         lineChart.setData(data);
